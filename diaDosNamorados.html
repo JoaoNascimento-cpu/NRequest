@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz dia dos namorados</title>
+
+    <style>
+        body{
+            background-color: red;
+        }
+        .painel{
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #sim{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 20px;
+            color: white;
+            margin-left: -80px;
+        }
+
+        #nao{
+            position: absolute;
+            
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border:2px solid white;
+            border-radius: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h1>Oi minha Goxtosa!!</h1>
+        <img src="/imgs/WhatsApp Image 2026-02-15 at 2.34.30 PM.jpeg" alt="img", width="200px", height="200px", padding-top="80px">
+        <h2>Aceita namorar comigo?</h2>
+
+        <button onclick="irParaSim()" id="sim">Sim!</button>
+        
+        <button onclick="fuja()" id="nao">Não! 😞</button>
+        <br>
+        
+    </div>
+
+
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("nao");
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            aleatorioX = Math.floor(Math.random() * maxX);
+            aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+
+        function irParaSim(){
+        window.location.href = "Sim.html";
+        }
+    </script>
+</body>
+</html>
